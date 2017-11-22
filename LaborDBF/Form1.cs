@@ -115,10 +115,14 @@ namespace LaborDBF
 
         private void exel_Click(object sender, EventArgs e)
         {            
-            Excel.Application exApp = new Excel.Application();
-            exApp.Visible = true;
+            Excel.Application exApp = new Excel.Application();            
             exApp.Workbooks.Add();
+
+            (exApp.Sheets[1]).Name = "Врачи";
+            (exApp.Sheets[2]).Name = "Лаборанты";
+
             exApp.Columns.ColumnWidth = 22;
+            exApp.Visible = true;
 
             Worksheet workSheet = (Worksheet)exApp.ActiveSheet;
             workSheet.Cells[1, 2] = monthTextBox.Text;
