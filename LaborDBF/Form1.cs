@@ -134,6 +134,8 @@ namespace LaborDBF
             workSheet.Cells[3, 1] = "Код врача";
             workSheet.Cells[3, 2] = "ФИО";
             workSheet.Cells[3, 3] = "Кол-во";
+
+            # region edit workSheet Size, Bold, Name
             (workSheet.Cells[3, 1] as Excel.Range).Font.Size = 14;
             (workSheet.Cells[3, 2] as Excel.Range).Font.Size = 14;
             (workSheet.Cells[3, 3] as Excel.Range).Font.Size = 14;
@@ -143,6 +145,7 @@ namespace LaborDBF
             (workSheet.Cells[3, 1] as Excel.Range).Font.Name = "Arial";
             (workSheet.Cells[3, 2] as Excel.Range).Font.Name = "Arial";
             (workSheet.Cells[3, 3] as Excel.Range).Font.Name = "Arial";
+            # endregion
 
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
             {
