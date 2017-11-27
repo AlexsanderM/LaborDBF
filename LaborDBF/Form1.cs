@@ -169,5 +169,26 @@ namespace LaborDBF
         {
 
         }
+
+        private void buttonStrangerPolikl_Click(object sender, EventArgs e)
+        {
+            string dirFile = textBox1.Text;
+            string cadena = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dirFile + ";Extended Properties=dBASE IV;User ID=Admin;Password=;";//CharacterSet=1251;";
+
+            OleDbConnection con = new OleDbConnection(cadena);
+
+            con.Open();
+
+            string sqlComand = "Select mu.Patient, po.PATIENT, po.S_pol, po.SN_pol, mu.cod, mu.K_U, ap.organ  FROM ( Select * from MU left JOIN po on mu.PATIENT = po.PATIENT) as TA left JOIN ap on TA.ap_id = ap.ap_id where ap.organ='1' ";//   where ap.organ='1' and  mu.cod = '26002'      where mu.cod = '26002' and ap.organ='1'                          where mu.cod = '26002' and ap.organ='1'";
+            //string sqlComand = "Select pp.patient,pp.fam,pp.im,pp.ot,  mu.cod, mu.K_U, ap.organ  FROM ( Select * from MU left JOIN pp on mu.PATIENT = pp.PATIENT) as TA left JOIN ap on TA.ap_id = ap.ap_id where ap.organ='1' ";//   where ap.organ='1' and  mu.cod = '26002'      where mu.cod = '26002' and ap.organ='1'                          where mu.cod = '26002' and ap.organ='1'";
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(sqlComand, con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            
+            con.Close();
+
+            dataGridView1.DataSource = ds.Tables[0];
+        }
     }
 }

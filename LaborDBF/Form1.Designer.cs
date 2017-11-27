@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.exel = new System.Windows.Forms.Button();
             this.monthTextBox = new System.Windows.Forms.TextBox();
+            this.buttonStrangerPolikl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,11 +123,22 @@
             this.monthTextBox.TabIndex = 8;
             this.monthTextBox.TextChanged += new System.EventHandler(this.monthTextBox_TextChanged);
             // 
+            // buttonStrangerPolikl
+            // 
+            this.buttonStrangerPolikl.Location = new System.Drawing.Point(482, 71);
+            this.buttonStrangerPolikl.Name = "buttonStrangerPolikl";
+            this.buttonStrangerPolikl.Size = new System.Drawing.Size(283, 23);
+            this.buttonStrangerPolikl.TabIndex = 9;
+            this.buttonStrangerPolikl.Text = "Список пациентов по направлению";
+            this.buttonStrangerPolikl.UseVisualStyleBackColor = true;
+            this.buttonStrangerPolikl.Click += new System.EventHandler(this.buttonStrangerPolikl_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 784);
+            this.Controls.Add(this.buttonStrangerPolikl);
             this.Controls.Add(this.monthTextBox);
             this.Controls.Add(this.exel);
             this.Controls.Add(this.button1);
@@ -155,6 +167,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button exel;
         private System.Windows.Forms.TextBox monthTextBox;
+        private System.Windows.Forms.Button buttonStrangerPolikl;
     }
 }
 
